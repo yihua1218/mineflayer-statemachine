@@ -1,4 +1,4 @@
-import { Bot } from "mineflayer";
+import { Bot } from "../../core";
 import { BotStateMachine, StateBehavior } from "./statemachine";
 import { Socket } from "socket.io";
 import path from 'path';
@@ -53,7 +53,10 @@ export class StateMachineWebserver
 
         const app = express();
         app.use('/web', express.static(path.join(__dirname, publicFolder)));
-        app.get('/', (req, res) => res.sendFile(path.join(__dirname, publicFolder, 'index.html')));
+        app.get('/', (req, res) => {
+            if (req) {}
+            res.sendFile(path.join(__dirname, publicFolder, 'index.html'))
+        });
 
         const http = require('http').createServer(app);
         const io = require('socket.io')(http);
