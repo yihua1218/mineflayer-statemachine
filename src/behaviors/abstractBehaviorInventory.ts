@@ -316,6 +316,7 @@ export abstract class AbstractBehaviorInventory implements StateBehavior
     isBlock(item: Item): boolean
     {
         // TODO Check if item is a block.
+        console.log(item);
         return false;
     }
 
@@ -335,6 +336,7 @@ export abstract class AbstractBehaviorInventory implements StateBehavior
     isFood(item: Item): boolean
     {
         // TODO Check if item is food.
+        console.log(item);
         return false;
     }
 }

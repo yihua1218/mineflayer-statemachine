@@ -53,7 +53,7 @@ export class StateMachineWebserver
 
         const app = express();
         app.use('/web', express.static(path.join(__dirname, publicFolder)));
-        app.get('/', (req, res) => res.sendFile(path.join(__dirname, publicFolder, 'index.html')));
+        app.get('/', (_req, res) => res.sendFile(path.join(__dirname, publicFolder, 'index.html')));
 
         const http = require('http').createServer(app);
         const io = require('socket.io')(http);
